@@ -7,9 +7,14 @@ public class OperatorExaple {
 		int b = 5;
 		int c = 7;
 		double d = 4.8;
+		float f = 5.2f;
 		
 		int result1 = a + b;
+		byte result3 = a + b;
 		double result2 = c + d;
+		int result4 = c + d;
+		float result5 = c + f;
+		int result6 = c + f; //소수점
 		
 		System.out.println(a);
 		System.out.println(b);
@@ -19,7 +24,6 @@ public class OperatorExaple {
 		System.out.println(result1);
 		System.out.println(result2);
 		
-//		abc
 	}
 
 }
