@@ -59,23 +59,29 @@ public class Calculator extends WindowAdapter implements ActionListener {
 		System.exit(0);
 	}
 
-//	@Override
-//	public void actionPerformed(ActionEvent e) {
-//		for(int i = 0; i < bt.length; i++) {
-//			if(e.getActionCommand().equals(bt[i].getText())) {
-//				tf.setText(tf.getText() +  e.getActionCommand());
-//			}
-//		}
-//		
-//	}
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		String op = e.getActionCommand();
 		if (op.equals("C")) {
 			tf.setText("");
 		} else if (op.equals("=")) {
+			if (tf.getText().contains("/")) {
+				String[] ex = tf.getText().split("/");
+				num = Integer.parseInt(ex[0]) / Integer.parseInt(ex[1]);
+				tf.setText(Integer.toString(num));
+			} else if (tf.getText().contains("x")) {
+				String[] ex = tf.getText().split("x");
+				num = Integer.parseInt(ex[0]) * Integer.parseInt(ex[1]);
+				tf.setText(Integer.toString(num));
+			} else if (tf.getText().contains("+")) {
+				String[] ex = tf.getText().split("[/+]"); // +만 쓰면 예외가 발생해요...
+				num = Integer.parseInt(ex[0]) + Integer.parseInt(ex[1]);
+				tf.setText(Integer.toString(num));
+			} else if (tf.getText().contains("-")) {
+				String[] ex = tf.getText().split("-");
+				num = Integer.parseInt(ex[0]) - Integer.parseInt(ex[1]);
+				tf.setText(Integer.toString(num));
+			}
 
-			tf.setText(Integer.toString(num));
 		} else if (op.equals("/") || op.equals("x") || op.equals("+") || op.endsWith("-")) {
 			tf.setText(tf.getText() + op);
 
@@ -83,11 +89,9 @@ public class Calculator extends WindowAdapter implements ActionListener {
 			for (int i = 0; i < bt.length; i++) {
 				if (op.equals(bt[i].getText())) {
 					tf.setText(tf.getText() + op);
-					num += Integer.parseInt(op);
 				}
 			}
 		}
-//		opr = e.getActionCommand();
 	}
 
 	public static void main(String[] args) {
