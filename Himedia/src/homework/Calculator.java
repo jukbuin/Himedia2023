@@ -1,6 +1,7 @@
 package homework;
 
 import java.awt.Dimension;
+
 import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.TextField;
@@ -16,16 +17,15 @@ public class Calculator extends WindowAdapter implements ActionListener {
 	private JButton[] bt;
 	private TextField tf;
 	private int num;
-//	private String opr;
 
 	public Calculator() {
 //		프레임
 		f = new Frame("Calculator");
-		f.setSize(350, 550);
+		f.setSize(330, 550);
 		f.setLayout(new FlowLayout());
 		f.addWindowListener(this);
 //		TextField
-		tf = new TextField(25);
+		tf = new TextField(35);
 //		버튼달기
 		bt = new JButton[16];
 		for (int i = 0; i < bt.length; i++) {
