@@ -1,7 +1,7 @@
 package homework;
 
+import java.awt.Color;
 import java.awt.Dimension;
-
 import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.TextField;
@@ -31,21 +31,28 @@ public class Calculator extends WindowAdapter implements ActionListener {
 		for (int i = 0; i < bt.length; i++) {
 			bt[i] = new JButton(Integer.toString(i));
 			bt[i].setPreferredSize(new Dimension(70, 50));
+			bt[i].setBackground(Color.pink);
 			bt[i].addActionListener(this);
 		}
 		for (int i = 0; i < 3; i++) {
 			bt[i].setText(Integer.toString(i + 7));
 		}
 		bt[3].setText("x");
+		bt[3].setBackground(Color.ORANGE);
 		bt[7].setText("-");
+		bt[7].setBackground(Color.orange);
 		for (int i = 8; i < 11; i++) {
 			bt[i].setText(Integer.toString(i - 7));
 		}
 		bt[11].setText("+");
+		bt[11].setBackground(Color.orange);
 		bt[12].setText("C");
+		bt[12].setBackground(Color.orange);
 		bt[13].setText(Integer.toString(0));
 		bt[14].setText("=");
+		bt[14].setBackground(Color.orange);
 		bt[15].setText("/");
+		bt[15].setBackground(Color.orange);
 //		불러오기
 		f.add(tf);
 		for (int i = 0; i < bt.length; i++) {
